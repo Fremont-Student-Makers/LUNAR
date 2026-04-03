@@ -3,13 +3,12 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Launch Schedule – LUNAR Rocketry Club</title>
-  <meta name="description" content="View upcoming and past LUNAR rocketry launch dates, locations, and event details." />
+  <title>Launch Updates - LUNAR Rocketry Club</title>
+  <meta name="description" content="Upcoming launch updates, range notes, and schedule details for LUNAR." />
   <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
 
-<!-- ===== Navigation ===== -->
 <nav class="nav" role="navigation" aria-label="Main navigation">
   <div class="container nav__inner">
     <a href="index.html" class="nav__logo">
@@ -20,317 +19,129 @@
       <span></span><span></span><span></span>
     </button>
     <ul class="nav__links" role="list">
-      <li><a href="index.html"    class="nav__link">Home</a></li>
-      <li><a href="about.html"    class="nav__link">About</a></li>
+      <li><a href="index.html" class="nav__link">Home</a></li>
       <li><a href="launches.html" class="nav__link nav__link--active">Launches</a></li>
-      <li><a href="gallery.html"  class="nav__link">Gallery</a></li>
-      <li><a href="join.html"     class="nav__link nav__cta btn btn--primary">Join Us</a></li>
+      <li><a href="programs.html" class="nav__link">Programs</a></li>
+      <li><a href="records.html" class="nav__link">Records</a></li>
+      <li><a href="faq.html" class="nav__link">FAQ</a></li>
+      <li><a href="gallery.html" class="nav__link">Gallery</a></li>
+      <li><a href="join.html" class="nav__link nav__cta btn btn--primary">Join</a></li>
     </ul>
   </div>
 </nav>
 
 <div class="page-wrapper">
-
-  <!-- ===== Page Header ===== -->
-  <header class="page-header">
+  <section class="page-header">
     <div class="container">
-      <p class="section-label">Flight Schedule</p>
-      <h1 class="page-header__title">Launch Days</h1>
-      <p class="page-header__subtitle">
-        We fly year-round at our Montezuma Hills site. All events are open to
-        the public — bring the family and enjoy the show!
-      </p>
-    </div>
-  </header>
-
-  <!-- ===== Launch Info ===== -->
-  <section class="section">
-    <div class="container">
-      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1.25rem;margin-bottom:3rem">
-        <div class="card">
-          <div class="card__icon">📍</div>
-          <h3 class="card__title">Launch Site</h3>
-          <p class="card__text">Montezuma Hills Open Area<br />Byron, CA 94514</p>
-        </div>
-        <div class="card">
-          <div class="card__icon">⏰</div>
-          <h3 class="card__title">Typical Hours</h3>
-          <p class="card__text">Gates open at 8:00 AM<br />Flying ends at 4:00 PM<br />Gates close at 5:00 PM</p>
-        </div>
-        <div class="card">
-          <div class="card__icon">🌬️</div>
-          <h3 class="card__title">Weather Policy</h3>
-          <p class="card__text">Launches are weather-dependent. Rain/wind cancellations are announced on our mailing list 24 hrs in advance.</p>
-        </div>
-        <div class="card">
-          <div class="card__icon">💰</div>
-          <h3 class="card__title">Range Fees</h3>
-          <p class="card__text">Members: free with current dues<br />Guests: $10/day<br />Spectators: always free</p>
-        </div>
-      </div>
-
-      <!-- ===== Upcoming Events ===== -->
-      <p class="section-label">Coming Up</p>
-      <h2 class="section-title" style="margin-bottom:1.5rem">Upcoming Launches — 2026</h2>
-
-      <div class="event-list">
-        <div class="event-item">
-          <div class="event-item__date">
-            <span class="event-item__month">Apr</span>
-            <span class="event-item__day">12</span>
-          </div>
-          <div class="event-item__body">
-            <div class="event-item__title">Spring Open Launch</div>
-            <div class="event-item__meta">
-              <span>📍 Montezuma Hills, Byron CA</span>
-              <span>⏰ 8 AM – 4 PM</span>
-              <span class="badge badge--green">Open to All</span>
-            </div>
-            <p style="color:var(--color-muted);font-size:0.9rem;margin-top:0.5rem">
-              Our first outdoor launch of the spring season. All motor classes welcome, from Estes A engines to Level 3 motors.
-            </p>
-          </div>
-        </div>
-
-        <div class="event-item">
-          <div class="event-item__date">
-            <span class="event-item__month">May</span>
-            <span class="event-item__day">10</span>
-          </div>
-          <div class="event-item__body">
-            <div class="event-item__title">High-Power Certification Day</div>
-            <div class="event-item__meta">
-              <span>📍 Montezuma Hills, Byron CA</span>
-              <span>⏰ 9 AM – 3 PM</span>
-              <span class="badge badge--blue">Certification</span>
-            </div>
-            <p style="color:var(--color-muted);font-size:0.9rem;margin-top:0.5rem">
-              Dedicated certification flights for NAR Level 1, 2, and 3. Certified club mentors available. Pre-registration required for certification attempts.
-            </p>
-          </div>
-        </div>
-
-        <div class="event-item">
-          <div class="event-item__date">
-            <span class="event-item__month">Jun</span>
-            <span class="event-item__day">7</span>
-          </div>
-          <div class="event-item__body">
-            <div class="event-item__title">STEM Outreach &amp; Youth Launch</div>
-            <div class="event-item__meta">
-              <span>📍 Livermore Community Park, CA</span>
-              <span>⏰ 10 AM – 2 PM</span>
-              <span class="badge badge--orange">Education</span>
-            </div>
-            <p style="color:var(--color-muted);font-size:0.9rem;margin-top:0.5rem">
-              Partnering with local school districts for a free public rocketry demonstration. Kids can build and fly mini rockets. Adults welcome!
-            </p>
-          </div>
-        </div>
-
-        <div class="event-item">
-          <div class="event-item__date">
-            <span class="event-item__month">Jul</span>
-            <span class="event-item__day">19</span>
-          </div>
-          <div class="event-item__body">
-            <div class="event-item__title">Summer Night Launch</div>
-            <div class="event-item__meta">
-              <span>📍 Montezuma Hills, Byron CA</span>
-              <span>⏰ 7 PM – 11 PM</span>
-              <span class="badge badge--green">Open to All</span>
-            </div>
-            <p style="color:var(--color-muted);font-size:0.9rem;margin-top:0.5rem">
-              Tracers, strobes, and glowsticks transform our range into a spectacle. Rockets equipped with illumination devices only. Bring a camp chair!
-            </p>
-          </div>
-        </div>
-
-        <div class="event-item">
-          <div class="event-item__date">
-            <span class="event-item__month">Aug</span>
-            <span class="event-item__day">9</span>
-          </div>
-          <div class="event-item__body">
-            <div class="event-item__title">Annual Altitude Challenge</div>
-            <div class="event-item__meta">
-              <span>📍 Montezuma Hills, Byron CA</span>
-              <span>⏰ 8 AM – 5 PM</span>
-              <span class="badge badge--blue">Competition</span>
-            </div>
-            <p style="color:var(--color-muted);font-size:0.9rem;margin-top:0.5rem">
-              Who can fly highest? Altimeter-verified altitude contest across multiple motor classes. Prizes for top finishers. Pre-registration required.
-            </p>
-          </div>
-        </div>
-
-        <div class="event-item">
-          <div class="event-item__date">
-            <span class="event-item__month">Sep</span>
-            <span class="event-item__day">13</span>
-          </div>
-          <div class="event-item__body">
-            <div class="event-item__title">Fall Open Launch</div>
-            <div class="event-item__meta">
-              <span>📍 Montezuma Hills, Byron CA</span>
-              <span>⏰ 8 AM – 4 PM</span>
-              <span class="badge badge--green">Open to All</span>
-            </div>
-            <p style="color:var(--color-muted);font-size:0.9rem;margin-top:0.5rem">
-              Regular monthly launch day. All motor classes, all skill levels. Perfect weather conditions expected — come fly!
-            </p>
-          </div>
-        </div>
-
-        <div class="event-item">
-          <div class="event-item__date">
-            <span class="event-item__month">Oct</span>
-            <span class="event-item__day">11</span>
-          </div>
-          <div class="event-item__body">
-            <div class="event-item__title">Spooky Rocket Spectacular</div>
-            <div class="event-item__meta">
-              <span>📍 Montezuma Hills, Byron CA</span>
-              <span>⏰ 3 PM – 8 PM</span>
-              <span class="badge badge--orange">Themed</span>
-            </div>
-            <p style="color:var(--color-muted);font-size:0.9rem;margin-top:0.5rem">
-              Halloween-themed launch event! Costume contest, themed rocket competition, and a twilight flying session. Family fun guaranteed.
-            </p>
-          </div>
-        </div>
-
-        <div class="event-item">
-          <div class="event-item__date">
-            <span class="event-item__month">Dec</span>
-            <span class="event-item__day">6</span>
-          </div>
-          <div class="event-item__body">
-            <div class="event-item__title">End-of-Year Celebration Launch</div>
-            <div class="event-item__meta">
-              <span>📍 Montezuma Hills, Byron CA</span>
-              <span>⏰ 9 AM – 3 PM</span>
-              <span class="badge badge--green">Open to All</span>
-            </div>
-            <p style="color:var(--color-muted);font-size:0.9rem;margin-top:0.5rem">
-              Wrap up the year in style! BBQ lunch provided for members. Annual awards ceremony following the flying session.
-            </p>
-          </div>
-        </div>
-      </div>
+      <p class="section-label">Operations</p>
+      <h1 class="page-header__title">Launch Updates</h1>
+      <p class="page-header__subtitle">This page tracks upcoming launches across Snow Ranch, Brigantino Park, and Ohlone Newark Campus. For immediate schedule changes, check the home banner first.</p>
     </div>
   </section>
 
-  <!-- ===== Rules & Safety ===== -->
+  <section class="section">
+    <div class="container two-col">
+      <article class="status-card" id="launch-status-card">
+        <p class="section-label">Current Status</p>
+        <h2 class="status-card__title" data-launch-title>Next Launch</h2>
+        <p class="status-card__message" data-launch-message></p>
+        <div class="status-card__meta">
+          <span class="badge badge--blue" data-launch-label>Scheduled</span>
+          <span data-launch-note></span>
+        </div>
+        <dl class="status-card__details">
+          <div><dt>Location</dt><dd data-launch-location>TBD</dd></div>
+          <div><dt>Window</dt><dd data-launch-time>TBD</dd></div>
+        </dl>
+      </article>
+
+      <article class="card">
+        <h2 class="card__title">Before You Drive Out</h2>
+        <p class="card__text">Bring your waiver, check pad assignment at setup, and confirm your recovery and range frequencies.</p>
+        <ul class="program-points">
+          <li>Range opens at 9:00 AM for the November Snow Ranch launch</li>
+          <li>High-power cert attempts require witness coordination</li>
+          <li>Weather decisions are posted before setup starts</li>
+        </ul>
+      </article>
+    </div>
+  </section>
+
   <section class="section section--alt">
     <div class="container">
-      <p class="section-label">Be Prepared</p>
-      <h2 class="section-title">Range Rules &amp; Safety</h2>
-      <p class="section-subtitle">Safety is our #1 priority. All flyers must follow these rules.</p>
+      <p class="section-label">Launch Sites</p>
+      <h2 class="section-title">Approved Flying Locations</h2>
+      <p class="section-subtitle">LUNAR currently operates from three sites only: two general launch locations and one ARC-only campus site.</p>
+      <div class="site-grid" id="launch-sites-list"></div>
+    </div>
+  </section>
 
+  <section class="section section--alt">
+    <div class="container">
+      <p class="section-label">Schedule</p>
+      <h2 class="section-title">Upcoming Launches</h2>
+      <div class="event-list" id="launches-list"></div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <p class="section-label">Safety</p>
+      <h2 class="section-title">Range Rules and Logistics</h2>
       <div class="accordion">
         <div class="accordion-item open">
           <button class="accordion-header">
-            What do I need to bring to a launch?
+            Who can fly?
             <span class="accordion-icon">+</span>
           </button>
           <div class="accordion-body">
-            Members need their current LUNAR membership card and a valid government-issued photo ID.
-            High-power flyers must also bring their NAR certification card. Guests should bring $10 for the range fee.
-            All flyers must sign the day's waiver before flying.
+            Members and guest flyers can fly once they complete the range waiver and receive RSO approval.
           </div>
         </div>
         <div class="accordion-item">
           <button class="accordion-header">
-            What motor classes are permitted?
+            What should be ready at check-in?
             <span class="accordion-icon">+</span>
           </button>
           <div class="accordion-body">
-            Our FAA waiver covers all motor classes from 1/4A through N (total impulse up to 40,960 N·s).
-            Motors above G-class require a valid NAR high-power certification of the appropriate level.
-            All experimental (EX) motors require prior approval from the Chief RSO.
+            Bring your motor details, recovery plan, and any certification paperwork required for your impulse class.
           </div>
         </div>
         <div class="accordion-item">
           <button class="accordion-header">
-            What are the range safety rules?
+            What if winds exceed limits?
             <span class="accordion-icon">+</span>
           </button>
           <div class="accordion-body">
-            All rockets must be inspected and approved by the Range Safety Officer before being placed on the pad.
-            The launch area must be clear of non-flying personnel before ignition. No alcohol is permitted at the range.
-            All participants must follow the RSO's instructions at all times. Failure to comply results in immediate removal from the range.
-          </div>
-        </div>
-        <div class="accordion-item">
-          <button class="accordion-header">
-            What if my rocket doesn't recover in the designated area?
-            <span class="accordion-icon">+</span>
-          </button>
-          <div class="accordion-body">
-            Rockets drifting outside the recovery boundary must be retrieved only after receiving clearance from the RSO.
-            If a rocket lands on private property, contact a club officer — do not trespass. LUNAR has established relationships
-            with neighboring landowners to assist with recovery.
-          </div>
-        </div>
-        <div class="accordion-item">
-          <button class="accordion-header">
-            Can I bring my own igniters and propellants?
-            <span class="accordion-icon">+</span>
-          </button>
-          <div class="accordion-body">
-            Commercially manufactured APCP and black-powder motors are permitted. All motors must be LEUP-compliant.
-            Members wishing to fly experimental motors must hold a valid LEUP and obtain RSO approval well in advance.
-            Igniters are available for purchase at the range, or you may bring your own approved igniters.
+            Winds or field conditions can pause or cancel operations. Status updates appear on the homepage and in launch notes.
           </div>
         </div>
       </div>
     </div>
   </section>
+</div>
 
-  <!-- ===== CTA ===== -->
-  <section class="section">
-    <div class="container">
-      <div class="cta-box">
-        <div style="font-size:3rem;margin-bottom:0.75rem">📅</div>
-        <h2 class="cta-box__title">Never Miss a Launch</h2>
-        <p class="cta-box__text">
-          Sign up for our mailing list to get launch reminders, weather cancellation notices,
-          and club announcements sent straight to your inbox.
-        </p>
-        <a href="join.html" class="btn btn--primary">Sign Up →</a>
-      </div>
-    </div>
-  </section>
-
-</div><!-- /.page-wrapper -->
-
-<!-- ===== Footer ===== -->
 <footer class="footer">
   <div class="container">
     <div class="footer__grid">
       <div>
         <div class="footer__brand-name">🚀 <span>LUNAR</span></div>
-        <p class="footer__brand-desc">
-          A NAR-chartered rocketry club serving the greater Bay Area.
-          We meet monthly and launch year-round.
-        </p>
+        <p class="footer__brand-desc">A NAR-chartered rocketry club serving the Bay Area launch community.</p>
       </div>
       <div>
-        <p class="footer__heading">Quick Links</p>
+        <p class="footer__heading">Sections</p>
         <ul class="footer__links">
-          <li><a href="index.html"    class="footer__link">Home</a></li>
-          <li><a href="about.html"    class="footer__link">About</a></li>
-          <li><a href="launches.html" class="footer__link">Launches</a></li>
-          <li><a href="gallery.html"  class="footer__link">Gallery</a></li>
-          <li><a href="join.html"     class="footer__link">Join</a></li>
+          <li><a href="index.html" class="footer__link">Home</a></li>
+          <li><a href="programs.html" class="footer__link">Programs</a></li>
+          <li><a href="records.html" class="footer__link">Records</a></li>
+          <li><a href="lost-found.html" class="footer__link">Lost and Found</a></li>
         </ul>
       </div>
       <div>
         <p class="footer__heading">Contact</p>
         <ul class="footer__links">
           <li><a href="mailto:info@lunarrocketry.org" class="footer__link">info@lunarrocketry.org</a></li>
-          <li><a href="join.html" class="footer__link">Membership Form</a></li>
+          <li><a href="join.html" class="footer__link">Membership</a></li>
         </ul>
       </div>
     </div>

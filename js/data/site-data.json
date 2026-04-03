@@ -1,0 +1,413 @@
+{
+  "launchStatus": {
+    "state": "scheduled",
+    "title": "First Saturday Snow Ranch Launch",
+    "message": "Snow Ranch is the next launch site. Gates open at 9:00 AM and flying runs until 4:00 PM.",
+    "statusLabel": "Scheduled",
+    "statusNote": "Updated: April 3, 2026 at 7:45 AM",
+    "nextLaunchISO": "2026-11-07T09:00:00-08:00",
+    "location": "Snow Ranch, Farmington CA",
+    "timeWindow": "9:00 AM - 4:00 PM",
+    "weatherForecast": {
+      "summary": "Mostly sunny with light afternoon breezes.",
+      "high": "74°F",
+      "wind": "6-11 mph",
+      "precip": "10%",
+      "visibility": "Good launch visibility",
+      "confidence": "Moderate confidence"
+    },
+    "fallbackText": "Next launch date is being finalized. Check back soon.",
+    "alert": {
+      "enabled": false,
+      "kind": "cancelled",
+      "headline": "Launch cancelled due to weather",
+      "body": "The range is closed due to sustained high winds. We will post a make-up date by noon."
+    }
+  },
+  "launchSites": [
+    {
+      "name": "Snow Ranch",
+      "location": "Farmington, CA",
+      "use": "Primary open launch site",
+      "notes": "Best for larger field days, general launches, and certification flights."
+    },
+    {
+      "name": "Brigantino Park",
+      "location": "Hollister, CA",
+      "use": "Secondary launch site",
+      "notes": "Used for community launches and smaller field operations when conditions fit."
+    },
+    {
+      "name": "Ohlone Newark Campus",
+      "location": "Fremont, CA",
+      "use": "ARC only site",
+      "notes": "Reserved for American Rocketry Challenge prep and student team launches."
+    }
+  ],
+  "homepage": {
+    "quickLinks": [
+      {
+        "title": "Launch Updates",
+        "description": "Real-time launch status, field notes, and countdown.",
+        "href": "launches.html"
+      },
+      {
+        "title": "Lost and Found",
+        "description": "Postings for recovered rockets, trackers, and gear.",
+        "href": "lost-found.html"
+      },
+      {
+        "title": "FAQ",
+        "description": "Answers for first-time guests, students, and cert flights.",
+        "href": "faq.html"
+      },
+      {
+        "title": "Programs",
+        "description": "ARC, High Power Certification, and Chip Can Challenge.",
+        "href": "programs.html"
+      },
+      {
+        "title": "Officers",
+        "description": "Meet the members leading the club this season.",
+        "href": "officers.html"
+      },
+      {
+        "title": "Teams",
+        "description": "Student and club teams sharing school, year, and social links.",
+        "href": "teams.html"
+      }
+    ]
+  },
+  "counters": [
+    {
+      "label": "Total Motors Flown",
+      "value": "4,382"
+    },
+    {
+      "label": "Highest Altitude",
+      "value": "22,614 ft"
+    },
+    {
+      "label": "Logged Flights",
+      "value": "7,940"
+    },
+    {
+      "label": "Launch Summaries",
+      "value": "119"
+    }
+  ],
+  "motorRecords": [
+    {
+      "motorClass": "A",
+      "altitude": "1,842 ft",
+      "member": "Morgan Lee",
+      "rocket": "Pico Blaze",
+      "site": "Brigantino Park",
+      "date": "2025-10-12"
+    },
+    {
+      "motorClass": "B",
+      "altitude": "3,006 ft",
+      "member": "Aiden Flores",
+      "rocket": "Swift Sparrow",
+      "site": "Snow Ranch",
+      "date": "2025-11-09"
+    },
+    {
+      "motorClass": "C",
+      "altitude": "4,990 ft",
+      "member": "Riley Navarro",
+      "rocket": "Copper Finch",
+      "site": "Brigantino Park",
+      "date": "2025-09-14"
+    },
+    {
+      "motorClass": "D",
+      "altitude": "6,220 ft",
+      "member": "Casey Novak",
+      "rocket": "Trailhead",
+      "site": "Snow Ranch",
+      "date": "2026-01-12"
+    },
+    {
+      "motorClass": "E",
+      "altitude": "7,930 ft",
+      "member": "Jordan Patel",
+      "rocket": "ArcLight",
+      "site": "Brigantino Park",
+      "date": "2026-02-14"
+    },
+    {
+      "motorClass": "F",
+      "altitude": "9,415 ft",
+      "member": "Avery Kim",
+      "rocket": "Northern Star",
+      "site": "Snow Ranch",
+      "date": "2026-03-09"
+    },
+    {
+      "motorClass": "G",
+      "altitude": "11,082 ft",
+      "member": "Morgan Lee",
+      "rocket": "Nightbird",
+      "site": "Snow Ranch",
+      "date": "2026-03-09"
+    },
+    {
+      "motorClass": "H",
+      "altitude": "13,604 ft",
+      "member": "Casey Novak",
+      "rocket": "Pioneer",
+      "site": "Snow Ranch",
+      "date": "2025-12-07"
+    },
+    {
+      "motorClass": "I",
+      "altitude": "15,220 ft",
+      "member": "Tara Gomez",
+      "rocket": "Vector Nine",
+      "site": "Brigantino Park",
+      "date": "2025-11-09"
+    },
+    {
+      "motorClass": "J",
+      "altitude": "17,845 ft",
+      "member": "Evan Chen",
+      "rocket": "Nebula Arrow",
+      "site": "Snow Ranch",
+      "date": "2026-01-12"
+    },
+    {
+      "motorClass": "K",
+      "altitude": "18,904 ft",
+      "member": "Priya Singh",
+      "rocket": "Stonekite",
+      "site": "Snow Ranch",
+      "date": "2026-03-09"
+    },
+    {
+      "motorClass": "L",
+      "altitude": "20,870 ft",
+      "member": "Jordan Patel",
+      "rocket": "Thunder Road",
+      "site": "Snow Ranch",
+      "date": "2026-03-09"
+    },
+    {
+      "motorClass": "M",
+      "altitude": "22,614 ft",
+      "member": "Riley Navarro",
+      "rocket": "Valkyrie X",
+      "site": "Snow Ranch",
+      "date": "2026-03-09"
+    }
+  ],
+  "flightHistory": [
+    {
+      "date": "2026-03-09",
+      "title": "March Wind Window Launch",
+      "summary": "18 flyers, 61 total flights, one Level 1 cert success and 100 percent recovery rate."
+    },
+    {
+      "date": "2026-02-14",
+      "title": "Winter Precision Day",
+      "summary": "Chip Can challenge test flights, low ceiling adaptation drills, and avionics workshop in the prep tent."
+    },
+    {
+      "date": "2026-01-12",
+      "title": "New Year Range Kickoff",
+      "summary": "First launch of the year with 47 flights. Outreach table hosted 23 first-time guests."
+    }
+  ],
+  "launches": [
+    {
+      "month": "Nov",
+      "day": "07",
+      "title": "First Saturday Launch",
+      "location": "Snow Ranch, Farmington CA",
+      "time": "9 AM - 4 PM",
+      "status": "Open to All",
+      "badge": "green",
+      "description": "Primary club launch at Snow Ranch with all flight classes and cert attempts allowed."
+    },
+    {
+      "month": "Dec",
+      "day": "05",
+      "title": "Brigantino Community Launch",
+      "location": "Brigantino Park, Hollister CA",
+      "time": "9 AM - 3 PM",
+      "status": "Open to All",
+      "badge": "blue",
+      "description": "Smaller-field launch with emphasis on lower impulse flights and family viewing."
+    },
+    {
+      "month": "Jan",
+      "day": "16",
+      "title": "ARC Team Flight Day",
+      "location": "Ohlone Newark Campus, Fremont CA",
+      "time": "10 AM - 2 PM",
+      "status": "Certification",
+      "badge": "orange",
+      "description": "American Rocketry Challenge only session for student teams and mentors."
+    }
+  ],
+  "faq": [
+    {
+      "question": "Do I need prior rocketry experience to fly with LUNAR?",
+      "answer": "No. New flyers are welcome, and mentors can help with your first prep, safety check, and launch card."
+    },
+    {
+      "question": "How are cancellations or launch moves communicated?",
+      "answer": "The homepage alert banner updates first, then the same status is posted in Launch Updates and the club mailing list."
+    },
+    {
+      "question": "Can guests attend launch days?",
+      "answer": "Yes. Spectators are always welcome. Guest flyers can fly with a day fee and must complete the range waiver."
+    },
+    {
+      "question": "How do High Power certifications work?",
+      "answer": "L1 and L2 cert attempts are flown at sanctioned launches with certified witnesses. L3 requires a review panel and advance planning."
+    },
+    {
+      "question": "Where can I find launch summaries and historical records?",
+      "answer": "Use the Records and History page for flight summaries, counters, and the current record leaderboard."
+    }
+  ],
+  "lostFound": [
+    {
+      "type": "Found",
+      "item": "Eggfinder Mini TX",
+      "where": "Pad 5 prep table",
+      "date": "2026-03-09",
+      "contact": "rangeops@lunarrocketry.org",
+      "status": "Unclaimed",
+      "notes": "Blue heat-shrink and silver tape on antenna base."
+    },
+    {
+      "type": "Lost",
+      "item": "54mm motor retainer",
+      "where": "South recovery line",
+      "date": "2026-03-09",
+      "contact": "info@lunarrocketry.org",
+      "status": "Open",
+      "notes": "Black anodized retainer marked C.N."
+    },
+    {
+      "type": "Found",
+      "item": "Altimeter sled",
+      "where": "Parking row C",
+      "date": "2026-02-14",
+      "contact": "rangeops@lunarrocketry.org",
+      "status": "Held by RSO",
+      "notes": "Includes Raven board and two LiPo straps."
+    }
+  ],
+  "programs": [
+    {
+      "name": "American Rocketry Challenge",
+      "slug": "arc",
+      "href": "arc.html",
+      "description": "Mentored student teams design, build, and fly payload missions for national competition.",
+      "highlights": [
+        "Weekly design review nights during season",
+        "Dedicated practice windows at monthly launches",
+        "Mentor pool for simulation, recovery, and test planning"
+      ]
+    },
+    {
+      "name": "High Power Certification",
+      "slug": "hpr",
+      "href": "high-power.html",
+      "description": "A structured pathway for L1-L3 prep, safety review, and certification attempts.",
+      "highlights": [
+        "Pre-flight readiness checklist and mentor signoff",
+        "Electronics and dual-deploy prep workshops",
+        "Post-flight debriefs to improve every attempt"
+      ]
+    },
+    {
+      "name": "Chip Can Challenge",
+      "slug": "chip-can",
+      "href": "chip-can.html",
+      "description": "A precision-build challenge focused on lightweight design, repeatability, and landing control.",
+      "highlights": [
+        "Shared scoring rubric for altitude and recovery quality",
+        "Open build sessions with rapid iteration support",
+        "Season standings tracked on Records and History"
+      ]
+    }
+  ],
+  "officers": [
+    {
+      "name": "Sarah Chen",
+      "role": "President",
+      "avatar": "👩‍✈️",
+      "email": "president@lunarrocketry.org",
+      "focus": "Launch operations and member coordination"
+    },
+    {
+      "name": "Marcus Rivera",
+      "role": "Vice President",
+      "avatar": "🧑‍🚀",
+      "email": "vp@lunarrocketry.org",
+      "focus": "Programming, workshops, and launch day logistics"
+    },
+    {
+      "name": "David Park",
+      "role": "Treasurer",
+      "avatar": "👨‍💼",
+      "email": "treasurer@lunarrocketry.org",
+      "focus": "Budgeting, dues, and event planning"
+    },
+    {
+      "name": "Emily Torres",
+      "role": "Secretary",
+      "avatar": "👩‍💻",
+      "email": "secretary@lunarrocketry.org",
+      "focus": "Minutes, records, and membership notes"
+    },
+    {
+      "name": "James Okafor",
+      "role": "Chief RSO",
+      "avatar": "🛡️",
+      "email": "rso@lunarrocketry.org",
+      "focus": "Range safety and launch approvals"
+    },
+    {
+      "name": "Linda Nguyen",
+      "role": "Education Chair",
+      "avatar": "🔬",
+      "email": "education@lunarrocketry.org",
+      "focus": "ARC, youth outreach, and workshops"
+    }
+  ],
+  "teams": [
+    {
+      "team": "Ohlone Aero",
+      "school": "Ohlone Newark Campus",
+      "yearsCompeting": "3 years",
+      "instagram": "@ohloneaero",
+      "members": "6 students",
+      "focus": "ARC and recovery system testing",
+      "status": "ARC"
+    },
+    {
+      "team": "Bay Altitude",
+      "school": "Livermore High School",
+      "yearsCompeting": "2 years",
+      "instagram": "@bayaltitude",
+      "members": "4 students",
+      "focus": "High-power builds and altitude flights",
+      "status": "Open Class"
+    },
+    {
+      "team": "Mission Plume",
+      "school": "Pleasanton Middle STEM Club",
+      "yearsCompeting": "1 year",
+      "instagram": "@missionplume",
+      "members": "5 students",
+      "focus": "Beginner launches and design practice",
+      "status": "Development"
+    }
+  ]
+}
