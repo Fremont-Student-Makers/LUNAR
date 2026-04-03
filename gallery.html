@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gallery – LUNAR Rocketry Club</title>
+  <meta name="description" content="Photos and media from LUNAR launch events, workshops, and club activities." />
+  <link rel="stylesheet" href="css/style.css" />
+  <style>
+    .gallery-item { cursor: pointer; position: relative; }
+    .gallery-item__label {
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      padding: 0.75rem 1rem 0.6rem;
+      background: linear-gradient(transparent, rgba(0,0,0,0.7));
+      font-size: 0.85rem;
+      color: var(--color-text);
+      opacity: 0;
+      transition: opacity 0.25s;
+    }
+    .gallery-item:hover .gallery-item__label { opacity: 1; }
+  </style>
+</head>
+<body>
+
+<!-- ===== Navigation ===== -->
+<nav class="nav" role="navigation" aria-label="Main navigation">
+  <div class="container nav__inner">
+    <a href="index.html" class="nav__logo">
+      <span class="nav__logo-icon">🚀</span>
+      <span>LUN<span>AR</span></span>
+    </a>
+    <button class="nav__hamburger" aria-label="Toggle menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav__links" role="list">
+      <li><a href="index.html"    class="nav__link">Home</a></li>
+      <li><a href="about.html"    class="nav__link">About</a></li>
+      <li><a href="launches.html" class="nav__link">Launches</a></li>
+      <li><a href="gallery.html"  class="nav__link nav__link--active">Gallery</a></li>
+      <li><a href="join.html"     class="nav__link nav__cta btn btn--primary">Join Us</a></li>
+    </ul>
+  </div>
+</nav>
+
+<div class="page-wrapper">
+
+  <!-- ===== Page Header ===== -->
+  <header class="page-header">
+    <div class="container">
+      <p class="section-label">Media</p>
+      <h1 class="page-header__title">Photo Gallery</h1>
+      <p class="page-header__subtitle">
+        A glimpse into LUNAR launches, workshops, and the rockets our members build.
+        Photos contributed by club members.
+      </p>
+    </div>
+  </header>
+
+  <!-- ===== Gallery Grid ===== -->
+  <section class="section">
+    <div class="container">
+      <p class="section-label">2025 – 2026 Season</p>
+      <h2 class="section-title" style="margin-bottom:1.75rem">Recent Launches</h2>
+
+      <div class="gallery-grid">
+        <div class="gallery-item">
+          <span>🚀</span>
+          <div class="gallery-item__label">Spring Open Launch 2025</div>
+        </div>
+        <div class="gallery-item">
+          <span>🔥</span>
+          <div class="gallery-item__label">Level 3 Certification Flight</div>
+        </div>
+        <div class="gallery-item">
+          <span>🌙</span>
+          <div class="gallery-item__label">Summer Night Launch 2025</div>
+        </div>
+        <div class="gallery-item">
+          <span>🛸</span>
+          <div class="gallery-item__label">Altitude Challenge Winner</div>
+        </div>
+        <div class="gallery-item">
+          <span>👨‍👩‍👧‍👦</span>
+          <div class="gallery-item__label">Youth STEM Outreach Day</div>
+        </div>
+        <div class="gallery-item">
+          <span>🎃</span>
+          <div class="gallery-item__label">Spooky Rocket Spectacular 2025</div>
+        </div>
+        <div class="gallery-item">
+          <span>🏆</span>
+          <div class="gallery-item__label">End-of-Year Awards 2025</div>
+        </div>
+        <div class="gallery-item">
+          <span>⚙️</span>
+          <div class="gallery-item__label">Build Night – Avionics Workshop</div>
+        </div>
+        <div class="gallery-item">
+          <span>💨</span>
+          <div class="gallery-item__label">Level 1 Certification – First Flight</div>
+        </div>
+      </div>
+
+      <h2 class="section-title" style="margin-top:4rem;margin-bottom:1.75rem">Rockets of the Year</h2>
+      <div class="gallery-grid">
+        <div class="gallery-item">
+          <span>🏅</span>
+          <div class="gallery-item__label">Best Scale Model – Silver Arrow</div>
+        </div>
+        <div class="gallery-item">
+          <span>🚀</span>
+          <div class="gallery-item__label">Highest Flight – Stratospheric Dream</div>
+        </div>
+        <div class="gallery-item">
+          <span>🎨</span>
+          <div class="gallery-item__label">Best Paint Job – Chromatic Ascent</div>
+        </div>
+        <div class="gallery-item">
+          <span>🔧</span>
+          <div class="gallery-item__label">Most Technical – Dual Deploy Master</div>
+        </div>
+        <div class="gallery-item">
+          <span>🌟</span>
+          <div class="gallery-item__label">Crowd Favorite – Midnight Blaze</div>
+        </div>
+        <div class="gallery-item">
+          <span>👶</span>
+          <div class="gallery-item__label">First Flight Award – Rookie Rockets</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Contribute ===== -->
+  <section class="section section--alt">
+    <div class="container">
+      <div class="cta-box">
+        <div style="font-size:3rem;margin-bottom:0.75rem">📷</div>
+        <h2 class="cta-box__title">Share Your Photos</h2>
+        <p class="cta-box__text">
+          Did you capture a great shot at a LUNAR launch? We'd love to feature it here!
+          Send your photos to our media coordinator and get credited on the gallery.
+        </p>
+        <a href="mailto:media@lunarrocketry.org" class="btn btn--primary">Submit Photos</a>
+      </div>
+    </div>
+  </section>
+
+</div><!-- /.page-wrapper -->
+
+<!-- ===== Footer ===== -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer__grid">
+      <div>
+        <div class="footer__brand-name">🚀 <span>LUNAR</span></div>
+        <p class="footer__brand-desc">
+          A NAR-chartered rocketry club serving the greater Bay Area.
+          We meet monthly and launch year-round.
+        </p>
+      </div>
+      <div>
+        <p class="footer__heading">Quick Links</p>
+        <ul class="footer__links">
+          <li><a href="index.html"    class="footer__link">Home</a></li>
+          <li><a href="about.html"    class="footer__link">About</a></li>
+          <li><a href="launches.html" class="footer__link">Launches</a></li>
+          <li><a href="gallery.html"  class="footer__link">Gallery</a></li>
+          <li><a href="join.html"     class="footer__link">Join</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="footer__heading">Contact</p>
+        <ul class="footer__links">
+          <li><a href="mailto:info@lunarrocketry.org" class="footer__link">info@lunarrocketry.org</a></li>
+          <li><a href="join.html" class="footer__link">Membership Form</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <p class="footer__copy">&copy; 2026 LUNAR Rocketry Club. All rights reserved.</p>
+      <p class="footer__nar">Chartered by the <a href="https://www.nar.org" target="_blank" rel="noopener">National Association of Rocketry</a></p>
+    </div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>

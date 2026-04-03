@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Join – LUNAR Rocketry Club</title>
+  <meta name="description" content="Become a member of LUNAR rocketry club. Learn about membership levels, benefits, and how to sign up." />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+<!-- ===== Navigation ===== -->
+<nav class="nav" role="navigation" aria-label="Main navigation">
+  <div class="container nav__inner">
+    <a href="index.html" class="nav__logo">
+      <span class="nav__logo-icon">🚀</span>
+      <span>LUN<span>AR</span></span>
+    </a>
+    <button class="nav__hamburger" aria-label="Toggle menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav__links" role="list">
+      <li><a href="index.html"    class="nav__link">Home</a></li>
+      <li><a href="about.html"    class="nav__link">About</a></li>
+      <li><a href="launches.html" class="nav__link">Launches</a></li>
+      <li><a href="gallery.html"  class="nav__link">Gallery</a></li>
+      <li><a href="join.html"     class="nav__link nav__link--active nav__cta btn btn--primary">Join Us</a></li>
+    </ul>
+  </div>
+</nav>
+
+<div class="page-wrapper">
+
+  <!-- ===== Page Header ===== -->
+  <header class="page-header">
+    <div class="container">
+      <p class="section-label">Get Started</p>
+      <h1 class="page-header__title">Join LUNAR</h1>
+      <p class="page-header__subtitle">
+        Membership gives you unlimited access to our range, mentorship from experienced
+        flyers, voting rights at club meetings, and much more.
+      </p>
+    </div>
+  </header>
+
+  <!-- ===== Membership Tiers ===== -->
+  <section class="section">
+    <div class="container">
+      <p class="section-label">Membership Options</p>
+      <h2 class="section-title">Choose Your Plan</h2>
+      <p class="section-subtitle">All memberships run January 1 – December 31. New members joining mid-year pay a pro-rated fee.</p>
+
+      <div class="cards-grid" style="margin-bottom:3rem">
+        <div class="card" style="border-color:var(--color-sky)">
+          <div class="card__icon">🌱</div>
+          <h3 class="card__title">Junior Member</h3>
+          <div style="font-size:2rem;font-weight:800;color:var(--color-sky);margin:0.5rem 0">$20<span style="font-size:1rem;font-weight:400;color:var(--color-muted)">/year</span></div>
+          <p class="card__text" style="margin-bottom:1rem">For students age 18 and under. Requires a parent or guardian co-signature.</p>
+          <ul style="color:var(--color-muted);font-size:0.9rem;display:flex;flex-direction:column;gap:0.4rem">
+            <li>✅ Unlimited range access (with adult supervisor)</li>
+            <li>✅ NAR junior membership included</li>
+            <li>✅ Newsletter &amp; mailing list</li>
+            <li>✅ Free workshops &amp; build nights</li>
+          </ul>
+        </div>
+
+        <div class="card" style="border-color:var(--color-accent);position:relative">
+          <div style="position:absolute;top:-12px;left:50%;transform:translateX(-50%);background:var(--color-accent);color:#fff;font-size:0.75rem;font-weight:700;padding:0.2rem 0.75rem;border-radius:999px;letter-spacing:0.05em;white-space:nowrap">MOST POPULAR</div>
+          <div class="card__icon">🚀</div>
+          <h3 class="card__title">Adult Member</h3>
+          <div style="font-size:2rem;font-weight:800;color:var(--color-accent);margin:0.5rem 0">$40<span style="font-size:1rem;font-weight:400;color:var(--color-muted)">/year</span></div>
+          <p class="card__text" style="margin-bottom:1rem">Full membership for adults 19 and over. Everything you need to fly with LUNAR.</p>
+          <ul style="color:var(--color-muted);font-size:0.9rem;display:flex;flex-direction:column;gap:0.4rem">
+            <li>✅ Unlimited range access</li>
+            <li>✅ NAR adult membership included</li>
+            <li>✅ Newsletter &amp; mailing list</li>
+            <li>✅ Free workshops &amp; build nights</li>
+            <li>✅ Voting rights at club meetings</li>
+            <li>✅ Club discount on motors &amp; supplies</li>
+          </ul>
+        </div>
+
+        <div class="card" style="border-color:var(--color-border)">
+          <div class="card__icon">👨‍👩‍👧</div>
+          <h3 class="card__title">Family Membership</h3>
+          <div style="font-size:2rem;font-weight:800;color:var(--color-text);margin:0.5rem 0">$65<span style="font-size:1rem;font-weight:400;color:var(--color-muted)">/year</span></div>
+          <p class="card__text" style="margin-bottom:1rem">Covers two adults and all children under 18 at the same address. Best value for families!</p>
+          <ul style="color:var(--color-muted);font-size:0.9rem;display:flex;flex-direction:column;gap:0.4rem">
+            <li>✅ All adult member benefits (×2)</li>
+            <li>✅ All junior member benefits (unlimited kids)</li>
+            <li>✅ One shared NAR family membership</li>
+            <li>✅ Priority registration for popular events</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- ===== Application Form ===== -->
+      <p class="section-label">Ready to Launch?</p>
+      <h2 class="section-title" style="margin-bottom:0.5rem">Membership Application</h2>
+      <p style="color:var(--color-muted);margin-bottom:2rem">
+        Fill out the form below and a club officer will follow up within a few days
+        with payment instructions and your welcome packet.
+      </p>
+
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:3rem;align-items:start">
+        <form class="form" id="join-form" novalidate>
+          <div class="form-group">
+            <label class="form-label" for="name">Full Name *</label>
+            <input class="form-input" type="text" id="name" name="name" placeholder="Jane Smith" required />
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="email">Email Address *</label>
+            <input class="form-input" type="email" id="email" name="email" placeholder="jane@example.com" required />
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="phone">Phone Number</label>
+            <input class="form-input" type="tel" id="phone" name="phone" placeholder="(555) 867-5309" />
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="membership">Membership Type *</label>
+            <select class="form-select" id="membership" name="membership" required>
+              <option value="">— Select a membership —</option>
+              <option value="junior">Junior Member ($20/year)</option>
+              <option value="adult">Adult Member ($40/year)</option>
+              <option value="family">Family Membership ($65/year)</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="experience">Rocketry Experience Level</label>
+            <select class="form-select" id="experience" name="experience">
+              <option value="">— Select your level —</option>
+              <option value="none">Complete Beginner</option>
+              <option value="model">Model Rocketry (A–G motors)</option>
+              <option value="hp1">High-Power Level 1 Certified</option>
+              <option value="hp2">High-Power Level 2 Certified</option>
+              <option value="hp3">High-Power Level 3 Certified</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="message">How did you hear about us? / Anything else?</label>
+            <textarea class="form-textarea" id="message" name="message" placeholder="Tell us a bit about yourself or how you found LUNAR..."></textarea>
+          </div>
+          <button type="submit" class="btn btn--primary" style="align-self:flex-start">Submit Application 🚀</button>
+        </form>
+
+        <!-- Side info -->
+        <div>
+          <div class="card" style="margin-bottom:1.25rem">
+            <div class="card__icon">❓</div>
+            <h3 class="card__title">Not sure yet?</h3>
+            <p class="card__text">
+              Come to any launch day as a guest for just $10 — no membership required.
+              You can watch, ask questions, and even help fly a club loaner rocket.
+              We're happy to answer any questions on-site.
+            </p>
+          </div>
+          <div class="card" style="margin-bottom:1.25rem">
+            <div class="card__icon">📬</div>
+            <h3 class="card__title">Stay in the Loop</h3>
+            <p class="card__text">
+              Not ready to join yet? You can still subscribe to our free mailing list
+              to receive launch announcements and club news.
+              Email <a href="mailto:info@lunarrocketry.org">info@lunarrocketry.org</a> with "Subscribe" in the subject.
+            </p>
+          </div>
+          <div class="card">
+            <div class="card__icon">🤝</div>
+            <h3 class="card__title">Volunteer Opportunities</h3>
+            <p class="card__text">
+              LUNAR is entirely volunteer-run. We always need help with setup/teardown,
+              Range Safety Officer training, photography, outreach, and web development.
+              Let us know in your application!
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FAQ ===== -->
+  <section class="section section--alt">
+    <div class="container">
+      <p class="section-label">FAQ</p>
+      <h2 class="section-title">Frequently Asked Questions</h2>
+
+      <div class="accordion">
+        <div class="accordion-item open">
+          <button class="accordion-header">
+            Do I need any prior experience to join?
+            <span class="accordion-icon">+</span>
+          </button>
+          <div class="accordion-body">
+            Absolutely not! Many of our members started with zero rocketry experience.
+            Our veteran members love mentoring beginners, and we have loaner rockets for
+            your first flights. All you need is curiosity and enthusiasm.
+          </div>
+        </div>
+        <div class="accordion-item">
+          <button class="accordion-header">
+            Is my child old enough to join?
+            <span class="accordion-icon">+</span>
+          </button>
+          <div class="accordion-body">
+            There's no minimum age! Children must be accompanied by a parent or guardian
+            at all LUNAR events. We recommend kids 8 and older for building and launching,
+            but younger children are always welcome to watch and get excited about rocketry.
+          </div>
+        </div>
+        <div class="accordion-item">
+          <button class="accordion-header">
+            What does my membership include in terms of NAR coverage?
+            <span class="accordion-icon">+</span>
+          </button>
+          <div class="accordion-body">
+            LUNAR membership includes NAR membership, which provides $10 million in
+            liability insurance coverage at club launches, access to NAR publications,
+            and eligibility to fly at any NAR-sanctioned event nationwide.
+          </div>
+        </div>
+        <div class="accordion-item">
+          <button class="accordion-header">
+            When and where are club meetings held?
+            <span class="accordion-icon">+</span>
+          </button>
+          <div class="accordion-body">
+            Club meetings are held on the first Tuesday of each month at 7 PM at
+            the Livermore Community Center (4444 East Avenue, Livermore, CA).
+            Meetings are open to members and prospective members. No RSVP needed.
+          </div>
+        </div>
+        <div class="accordion-item">
+          <button class="accordion-header">
+            How do I get my high-power rocketry certification?
+            <span class="accordion-icon">+</span>
+          </button>
+          <div class="accordion-body">
+            Level 1 and 2 certifications are administered by Tripoli or NAR at sanctioned
+            launches. LUNAR hosts dedicated certification days several times a year where
+            our certified members serve as witnesses. Level 3 requires an additional
+            review process — talk to one of our Level 3 certified members for guidance.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</div><!-- /.page-wrapper -->
+
+<!-- ===== Footer ===== -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer__grid">
+      <div>
+        <div class="footer__brand-name">🚀 <span>LUNAR</span></div>
+        <p class="footer__brand-desc">
+          A NAR-chartered rocketry club serving the greater Bay Area.
+          We meet monthly and launch year-round.
+        </p>
+      </div>
+      <div>
+        <p class="footer__heading">Quick Links</p>
+        <ul class="footer__links">
+          <li><a href="index.html"    class="footer__link">Home</a></li>
+          <li><a href="about.html"    class="footer__link">About</a></li>
+          <li><a href="launches.html" class="footer__link">Launches</a></li>
+          <li><a href="gallery.html"  class="footer__link">Gallery</a></li>
+          <li><a href="join.html"     class="footer__link">Join</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="footer__heading">Contact</p>
+        <ul class="footer__links">
+          <li><a href="mailto:info@lunarrocketry.org" class="footer__link">info@lunarrocketry.org</a></li>
+          <li><a href="join.html" class="footer__link">Membership Form</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <p class="footer__copy">&copy; 2026 LUNAR Rocketry Club. All rights reserved.</p>
+      <p class="footer__nar">Chartered by the <a href="https://www.nar.org" target="_blank" rel="noopener">National Association of Rocketry</a></p>
+    </div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>
