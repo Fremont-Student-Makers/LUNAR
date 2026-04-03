@@ -52,16 +52,77 @@
     const node = document.getElementById('launch-sites-list');
     if (!node || !Array.isArray(items)) return;
 
-    node.innerHTML = items.map(function (site) {
+    const tabMarkup = items.map(function (site, index) {
       return (
-        '<article class="card">' +
-          '<p class="card__eyebrow">' + (site.use || 'Launch site') + '</p>' +
-          '<h3 class="card__title">' + (site.name || 'Site') + '</h3>' +
-          '<p class="card__text">' + (site.location || '') + '</p>' +
-          '<p class="card__text">' + (site.notes || '') + '</p>' +
-        '</article>'
+        '<button type="button" class="launch-site-tab' + (index === 0 ? ' is-active' : '') + '" role="tab" id="launch-site-tab-' + index + '" aria-selected="' + (index === 0 ? 'true' : 'false') + '" aria-controls="launch-site-panel-' + index + '" data-site-index="' + index + '">' +
+          '<span class="launch-site-tab__title">' + (site.name || 'Site') + '</span>' +
+          '<span class="launch-site-tab__meta">' + (site.use || 'Launch site') + '</span>' +
+        '</button>'
       );
     }).join('');
+
+    const panelMarkup = items.map(function (site, index) {
+      const rules = Array.isArray(site.rules) ? site.rules : [];
+      const recommendations = Array.isArray(site.recommendations) ? site.recommendations : [];
+      return (
+        '<section class="launch-site-panel' + (index === 0 ? ' is-active' : '') + '" role="tabpanel" id="launch-site-panel-' + index + '" aria-labelledby="launch-site-tab-' + index + '"' + (index === 0 ? '' : ' hidden') + '>' +
+          '<div class="launch-site-panel__layout">' +
+            '<div>' +
+              '<p class="card__eyebrow">' + (site.location || 'Launch site') + '</p>' +
+              '<h3 class="card__title">' + (site.name || 'Site') + '</h3>' +
+              '<p class="card__text">' + (site.description || site.notes || '') + '</p>' +
+              '<p class="launch-site-card__heading">Directions</p>' +
+              '<p class="card__text">' + (site.directions || 'Directions coming soon.') + '</p>' +
+              '<p class="launch-site-card__heading">Launch Rules</p>' +
+              '<ul class="program-points">' + rules.map(function (rule) { return '<li>' + rule + '</li>'; }).join('') + '</ul>' +
+              '<p class="launch-site-card__heading">Recommendations</p>' +
+              '<ul class="program-points">' + recommendations.map(function (item) { return '<li>' + item + '</li>'; }).join('') + '</ul>' +
+            '</div>' +
+            '<div class="launch-site-panel__map">' +
+              (site.mapEmbed ? '<iframe title="Map of ' + (site.name || 'site') + '" src="' + site.mapEmbed + '" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>' : '<div class="launch-site-card__map-placeholder">Map unavailable</div>') +
+            '</div>' +
+          '</div>' +
+        '</section>'
+      );
+    }).join('');
+
+    node.innerHTML = (
+      '<div class="launch-site-tabs" role="tablist" aria-label="Launch locations">' + tabMarkup + '</div>' +
+      '<div class="launch-site-panels">' + panelMarkup + '</div>'
+    );
+
+    const tabs = node.querySelectorAll('.launch-site-tab');
+    const panels = node.querySelectorAll('.launch-site-panel');
+
+    function activateTab(index) {
+      tabs.forEach(function (tab, tabIndex) {
+        const active = tabIndex === index;
+        tab.classList.toggle('is-active', active);
+        tab.setAttribute('aria-selected', String(active));
+        tab.tabIndex = active ? 0 : -1;
+      });
+
+      panels.forEach(function (panel, panelIndex) {
+        const active = panelIndex === index;
+        panel.classList.toggle('is-active', active);
+        panel.hidden = !active;
+      });
+    }
+
+    tabs.forEach(function (tab, index) {
+      tab.addEventListener('click', function () {
+        activateTab(index);
+      });
+      tab.addEventListener('keydown', function (event) {
+        if (event.key !== 'ArrowLeft' && event.key !== 'ArrowRight') return;
+        event.preventDefault();
+        const nextIndex = event.key === 'ArrowRight' ? (index + 1) % tabs.length : (index - 1 + tabs.length) % tabs.length;
+        tabs[nextIndex].focus();
+        activateTab(nextIndex);
+      });
+    });
+
+    activateTab(0);
   }
 
   function renderLaunchAlert(launchStatus) {
@@ -248,6 +309,23 @@
     }).join('');
   }
 
+  function renderMileHighRecovery(rows) {
+    const node = document.getElementById('mile-high-list');
+    if (!node || !Array.isArray(rows)) return;
+
+    node.innerHTML = rows.map(function (item) {
+      return (
+        '<article class="card">' +
+          '<p class="card__eyebrow">' + (item.altitude || '') + '</p>' +
+          '<h3 class="card__title">' + (item.member || 'Member') + '</h3>' +
+          '<p class="card__text">' + (item.rocket || '') + ' · ' + (item.site || '') + '</p>' +
+          '<p class="card__text">' + (item.description || '') + '</p>' +
+          '<p class="card__text">' + formatHistoryDate(item.date || '') + '</p>' +
+        '</article>'
+      );
+    }).join('');
+  }
+
   function renderFlightHistory(rows) {
     const node = document.getElementById('history-list');
     if (!node || !Array.isArray(rows)) return;
@@ -318,6 +396,25 @@
         '</article>'
       );
     }).join('');
+  }
+
+  function renderArcResources(items) {
+    const node = document.getElementById('arc-resources-list');
+    if (!node || !Array.isArray(items)) return;
+
+    node.innerHTML = items.map(function (resource) {
+      return (
+        '<article class="card">' +
+          '<h3 class="card__title">' + (resource.title || 'Resource') + '</h3>' +
+          '<p class="card__text">' + (resource.text || '') + '</p>' +
+          '<a class="resource-link" href="' + (resource.href || '#') + '">' + (resource.linkText || 'Open') + '</a>' +
+        '</article>'
+      );
+    }).join('');
+  }
+
+  function renderArcFaq(items) {
+    renderFaqAccordion(items, 'arc-faq');
   }
 
   function renderOfficers(items) {
@@ -465,6 +562,32 @@
     ].join('');
   }
 
+  function applyActiveNav() {
+    const currentPath = window.location.pathname.split('/').pop() || 'index.html';
+    const activePageMap = {
+      'index.html': 'index.html',
+      'arc.html': 'arc.html',
+      'high-power.html': 'arc.html',
+      'chip-can.html': 'arc.html',
+      'launches.html': 'launches.html',
+      'records.html': 'records.html',
+      'faq.html': 'faq.html',
+      'gallery.html': 'gallery.html',
+      'join.html': 'join.html',
+      'officers.html': 'index.html',
+      'teams.html': 'index.html',
+      'about.html': 'index.html',
+      'lost-found.html': 'launches.html',
+      'programs.html': 'arc.html'
+    };
+    const activeHref = activePageMap[currentPath] || currentPath;
+
+    document.querySelectorAll('.nav__link').forEach(function (link) {
+      const href = (link.getAttribute('href') || '').split('/').pop();
+      link.classList.toggle('nav__link--active', href === activeHref || (currentPath === '' && href === 'index.html'));
+    });
+  }
+
   function wireAccordions() {
     document.querySelectorAll('.accordion-header').forEach(function (header) {
       header.addEventListener('click', function () {
@@ -486,7 +609,6 @@
     fetch('js/data/site-data.json')
       .then(function (response) { return response.json(); })
       .then(function (data) {
-        renderPrimaryNav();
         renderLaunchAlert(data.launchStatus);
         renderLaunchStatusCard(data.launchStatus);
         renderLaunchWeather(data.launchStatus);
@@ -495,6 +617,7 @@
         renderQuickLinks((data.homepage && data.homepage.quickLinks) || []);
         renderLaunchSites(data.launchSites);
         renderMotorRecords(data.motorRecords);
+        renderMileHighRecovery(data.mileHighRecovery);
         renderFlightHistory(data.flightHistory);
         renderFaqAccordion(data.faq, 'faq-preview');
         renderFaqAccordion(data.faq, 'faq-full');
@@ -502,6 +625,8 @@
         renderPrograms(data.programs);
         renderOfficers(data.officers);
         renderTeams(data.teams);
+        renderArcResources(data.arcResources);
+        renderArcFaq(data.arcFaq);
         renderNavSearch();
 
         buildLaunchList(data.launches, document.getElementById('home-launch-list'));
@@ -514,6 +639,9 @@
         if (summary) summary.textContent = 'Launch data could not be loaded.';
       });
   }
+
+  renderPrimaryNav();
+  applyActiveNav();
 
   /* ---- Mobile Navigation ---- */
   const hamburger = document.querySelector('.nav__hamburger');
@@ -553,32 +681,6 @@
         '</div>';
     });
   }
-
-  /* ---- Smooth active-link highlight ---- */
-  const currentPath = window.location.pathname.split('/').pop() || 'index.html';
-  const activePageMap = {
-    'index.html': 'index.html',
-    'arc.html': 'arc.html',
-    'high-power.html': 'arc.html',
-    'chip-can.html': 'arc.html',
-    'launches.html': 'launches.html',
-    'records.html': 'records.html',
-    'faq.html': 'faq.html',
-    'gallery.html': 'gallery.html',
-    'join.html': 'join.html',
-    'officers.html': 'index.html',
-    'teams.html': 'index.html',
-    'about.html': 'index.html',
-    'lost-found.html': 'launches.html',
-    'programs.html': 'arc.html'
-  };
-  const activeHref = activePageMap[currentPath] || currentPath;
-  document.querySelectorAll('.nav__link').forEach(function (link) {
-    const href = (link.getAttribute('href') || '').split('/').pop();
-    if (href === activeHref || (currentPath === '' && href === 'index.html')) {
-      link.classList.add('nav__link--active');
-    }
-  });
 
   loadDataAndRender();
 }());

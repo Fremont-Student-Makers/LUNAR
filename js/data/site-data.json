@@ -29,19 +29,61 @@
       "name": "Snow Ranch",
       "location": "Farmington, CA",
       "use": "Primary open launch site",
-      "notes": "Best for larger field days, general launches, and certification flights."
+      "notes": "Best for larger field days, general launches, and certification flights.",
+      "description": "Snow Ranch is our biggest all-purpose launch field and the best fit for larger rockets, certification attempts, and full club launch days.",
+      "directions": "From the Bay Area, follow I-580 east toward Tracy, then connect to CA-132 and local county roads toward Farmington. Watch for club emails and range notes for the final access gate and parking turn.",
+      "rules": [
+        "Follow posted parking and setup lanes exactly as marked by the RSO team.",
+        "Keep all pad and flight prep inside the designated launch zone.",
+        "Recovery walkouts begin only after RSO clearance and a sky clear.",
+        "High-power flights must have a verified witness and inspection card."
+      ],
+      "recommendations": [
+        "Bring sun protection and water; this site can run long and exposed.",
+        "Use a radio or phone app if your team coordinates multiple recovery crews.",
+        "Great for large airframes, cert flights, and higher recovery footprints."
+      ],
+      "mapEmbed": "https://www.google.com/maps?q=Snow+Ranch+Farmington+CA&output=embed"
     },
     {
       "name": "Brigantino Park",
       "location": "Hollister, CA",
       "use": "Secondary launch site",
-      "notes": "Used for community launches and smaller field operations when conditions fit."
+      "notes": "Used for community launches and smaller field operations when conditions fit.",
+      "description": "Brigantino Park is the compact community launch site used for smaller field days, family viewing, and lower-impulse flights when conditions and permissions fit.",
+      "directions": "From central Hollister, head toward Brigantino Park via the primary park entrances and follow event-day signs to the club parking area. Do not drive to the flying zone until setup is complete.",
+      "rules": [
+        "Keep flights low impulse unless the event notice says otherwise.",
+        "Respect public park boundaries and keep spectators behind the safety line.",
+        "No recovery beyond the designated field without RSO approval.",
+        "Pack out everything you bring in."
+      ],
+      "recommendations": [
+        "Best for model rockets and family-friendly launches.",
+        "Plan for smaller recovery areas and tighter range control.",
+        "Good site for quick launch sessions and demonstrations."
+      ],
+      "mapEmbed": "https://www.google.com/maps?q=Brigantino+Park+Hollister+CA&output=embed"
     },
     {
       "name": "Ohlone Newark Campus",
       "location": "Fremont, CA",
       "use": "ARC only site",
-      "notes": "Reserved for American Rocketry Challenge prep and student team launches."
+      "notes": "Reserved for American Rocketry Challenge prep and student team launches.",
+      "description": "The Ohlone Newark Campus site is reserved for ARC team development, student test flights, and controlled challenge practice runs.",
+      "directions": "Follow campus event instructions and the ARC team check-in emails for the correct lot and field access. Campus access is limited to approved student teams and mentors.",
+      "rules": [
+        "ARC team access only unless specifically invited by the education chair.",
+        "Keep all team materials inside the assigned staging area.",
+        "Follow campus parking and noise rules exactly.",
+        "Use this site only for challenge prep and approved ARC launches."
+      ],
+      "recommendations": [
+        "Bring a compact toolkit and a simple launch checklist.",
+        "Great for team coordination, recovery practice, and mission flights.",
+        "Coordinate with ARC mentors before moving any test hardware to campus."
+      ],
+      "mapEmbed": "https://www.google.com/maps?q=Ohlone+Newark+Campus+Fremont+CA&output=embed"
     }
   ],
   "homepage": {
@@ -62,14 +104,9 @@
         "href": "faq.html"
       },
       {
-        "title": "Programs",
-        "description": "ARC, High Power Certification, and Chip Can Challenge.",
-        "href": "programs.html"
-      },
-      {
-        "title": "Officers",
-        "description": "Meet the members leading the club this season.",
-        "href": "officers.html"
+        "title": "High Power Certification",
+        "description": "L1-L3 prep, witness coordination, and cert support.",
+        "href": "high-power.html"
       },
       {
         "title": "Teams",
@@ -202,6 +239,32 @@
       "date": "2026-03-09"
     }
   ],
+  "mileHighRecovery": [
+    {
+      "member": "Riley Navarro",
+      "rocket": "Valkyrie X",
+      "altitude": "22,614 ft",
+      "site": "Snow Ranch",
+      "date": "2026-03-09",
+      "description": "Recovered intact after a full-mile-plus flight and demonstrated precise recovery planning."
+    },
+    {
+      "member": "Jordan Patel",
+      "rocket": "Thunder Road",
+      "altitude": "20,870 ft",
+      "site": "Snow Ranch",
+      "date": "2026-03-09",
+      "description": "Clean deployment, long walkout, and full recovery after a high-altitude flight."
+    },
+    {
+      "member": "Priya Singh",
+      "rocket": "Stonekite",
+      "altitude": "18,904 ft",
+      "site": "Snow Ranch",
+      "date": "2026-03-09",
+      "description": "Supported by a dual-deploy setup that brought the airframe back in one piece."
+    }
+  ],
   "flightHistory": [
     {
       "date": "2026-03-09",
@@ -271,6 +334,10 @@
     {
       "question": "Where can I find launch summaries and historical records?",
       "answer": "Use the Records and History page for flight summaries, counters, and the current record leaderboard."
+    },
+    {
+      "question": "Where did the Lost and Found board go?",
+      "answer": "Lost and Found is now grouped into the FAQ area so members can find it alongside other quick-reference club information."
     }
   ],
   "lostFound": [
@@ -335,6 +402,44 @@
         "Open build sessions with rapid iteration support",
         "Season standings tracked on Records and History"
       ]
+    }
+  ],
+  "arcResources": [
+    {
+      "title": "Team Contacts",
+      "text": "Email the education chair for ARC support, launch scheduling, and prep session coordination.",
+      "linkText": "Contact education chair",
+      "href": "mailto:education@lunarrocketry.org"
+    },
+    {
+      "title": "Competition Resources",
+      "text": "Use the ARC hub for competition prep, mentor feedback, and launch-day planning notes.",
+      "linkText": "Open ARC hub",
+      "href": "arc.html"
+    },
+    {
+      "title": "Featured Teams",
+      "text": "See the teams currently flying at LUNAR launches and sharing competition details.",
+      "linkText": "View teams",
+      "href": "teams.html"
+    }
+  ],
+  "arcFaq": [
+    {
+      "question": "Where do ARC teams fly?",
+      "answer": "ARC teams use the Ohlone Newark Campus site in Fremont for prep flights and approved challenge launches."
+    },
+    {
+      "question": "Who should ARC teams contact before a launch?",
+      "answer": "Teams should contact the education chair or ARC mentor group to confirm the schedule, access, and field plan."
+    },
+    {
+      "question": "Can ARC teams get help with simulations and recovery?",
+      "answer": "Yes. LUNAR mentors can review sims, recovery plans, and build decisions before launch day."
+    },
+    {
+      "question": "Where can teams share their details?",
+      "answer": "Teams can use the Teams page to share school, years competing, Instagram handle, and team focus."
     }
   ],
   "officers": [

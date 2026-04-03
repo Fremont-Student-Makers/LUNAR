@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Records and History - LUNAR Rocketry Club</title>
-  <meta name="description" content="Leaderboard records, launch summaries, and flight history for LUNAR." />
+  <title>Records - LUNAR Rocketry Club</title>
+  <meta name="description" content="Motor-class altitude records and mile-high recovery achievements for LUNAR." />
   <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
@@ -27,28 +27,22 @@
   <section class="page-header">
     <div class="container">
       <p class="section-label">Data Log</p>
-      <h1 class="page-header__title">Records and Flight History</h1>
-      <p class="page-header__subtitle">Highest altitude by motor class, aggregate counters, and launch summaries from member reports.</p>
+      <h1 class="page-header__title">Leaderboard</h1>
+      <p class="page-header__subtitle">Highest altitude by motor class and the club's mile-high recovery achievements.</p>
     </div>
   </section>
-
-  <div class="stats-bar">
-    <div class="container">
-      <div class="stats-bar__grid" id="home-counters"></div>
-    </div>
-  </div>
 
   <section class="section">
     <div class="container two-col">
       <article>
-        <p class="section-label">Leaderboard</p>
+        <p class="section-label">Motor-Class Rankings</p>
         <h2 class="section-title">Highest Altitude by Motor Class</h2>
         <div id="motor-records-list"></div>
       </article>
       <article>
-        <p class="section-label">Flight History</p>
-        <h2 class="section-title">Launch Summaries</h2>
-        <div class="timeline" id="history-list"></div>
+        <p class="section-label">Mile-High Recovery</p>
+        <h2 class="section-title">Over a Mile Up and Back</h2>
+        <div id="mile-high-list"></div>
       </article>
     </div>
   </section>
