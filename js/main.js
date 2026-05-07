@@ -264,7 +264,7 @@
         if (state === 'moved') {
           summary.textContent = 'Launch moved. Countdown reflects the updated date/time.';
         } else {
-          summary.textContent = 'Countdown to wheels-up at the range.';
+          summary.textContent = 'Countdown to first launch at the range.';
         }
       }
     }
