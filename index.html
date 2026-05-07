@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>LUNAR - Livermore Unit of the National Association of Rocketry</title>
   <meta name="description" content="Launch updates, flight history, programs, and member resources for LUNAR rocketry." />
+  <link rel="icon" href="favicon.ico" type="image/x-icon" />
   <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
@@ -13,7 +14,7 @@
   <div class="container nav__inner">
     <a href="index.html" class="nav__logo">
       
-      <span>LUN<span>AR</span></span>
+      <span><span style="color: var(--color-text);">LUN</span><span style="color: var(--color-accent);">A</span><span style="color: var(--color-text);">R</span></span>
     </a>
     <button class="nav__hamburger" aria-label="Toggle menu" aria-expanded="false">
       <span></span><span></span><span></span>
@@ -86,6 +87,7 @@
 
       <article class="status-card" id="launch-weather-card">
         <p class="section-label">Launch-Day Weather</p>
+        <p class="section-label" data-weather-location style="margin-bottom: 1rem; font-size: 0.9rem; color: var(--color-muted);"></p>
         <h2 class="status-card__title" data-weather-summary>Forecast pending</h2>
         <div class="status-card__meta">
           <span class="badge badge--gray" data-weather-confidence>Moderate confidence</span>

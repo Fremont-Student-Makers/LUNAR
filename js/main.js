@@ -24,6 +24,22 @@
     });
   }
 
+  function formatLaunchDateTime(isoDateTime) {
+    const parsed = new Date(isoDateTime);
+    if (Number.isNaN(parsed.getTime())) return 'Date TBD';
+    const dateStr = parsed.toLocaleDateString(undefined, {
+      month: 'long',
+      day: 'numeric',
+      year: 'numeric'
+    });
+    const timeStr = parsed.toLocaleTimeString(undefined, {
+      hour: 'numeric',
+      minute: '2-digit',
+      meridiem: 'short'
+    });
+    return dateStr + ' at ' + timeStr;
+  }
+
   function buildLaunchList(list, target) {
     if (!target || !Array.isArray(list)) return;
 
@@ -158,7 +174,7 @@
     if (titleNode) titleNode.textContent = launchStatus.title || 'Next Launch';
     if (messageNode) messageNode.textContent = launchStatus.message || '';
     if (labelNode) labelNode.textContent = launchStatus.statusLabel || 'Scheduled';
-    if (noteNode) noteNode.textContent = launchStatus.statusNote || '';
+    if (noteNode) noteNode.textContent = 'Launch Date: ' + formatLaunchDateTime(launchStatus.nextLaunchISO || '');
     if (locationNode) locationNode.textContent = launchStatus.location || 'TBD';
     if (timeNode) timeNode.textContent = launchStatus.timeWindow || 'TBD';
   }
@@ -174,6 +190,7 @@
     const precip = node.querySelector('[data-weather-precip]');
     const visibility = node.querySelector('[data-weather-visibility]');
     const confidence = node.querySelector('[data-weather-confidence]');
+    const location = node.querySelector('[data-weather-location]');
 
     if (summary) summary.textContent = forecast.summary || 'Forecast pending';
     if (high) high.textContent = forecast.high || '--';
@@ -181,6 +198,7 @@
     if (precip) precip.textContent = forecast.precip || '--';
     if (visibility) visibility.textContent = forecast.visibility || '--';
     if (confidence) confidence.textContent = forecast.confidence || '--';
+    if (location) location.textContent = forecast.location || '';
   }
 
   function renderCountdown(launchStatus) {
@@ -636,6 +654,102 @@
     });
   }
 
+  function setupBackToTopButton() {
+    if (document.querySelector('.back-to-top')) return;
+
+    const button = document.createElement('button');
+    button.type = 'button';
+    button.className = 'back-to-top';
+    button.setAttribute('aria-label', 'Back to top');
+    button.textContent = '↑';
+    document.body.appendChild(button);
+
+    function updateVisibility() {
+      button.classList.toggle('is-visible', window.scrollY > 500);
+    }
+
+    button.addEventListener('click', function () {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+
+    window.addEventListener('scroll', updateVisibility, { passive: true });
+    updateVisibility();
+  }
+
+  function fetchLiveWeather(latitude, longitude, launchDate, locationName) {
+    // Open-Meteo API - free, no key required
+    const url = 'https://api.open-meteo.com/v1/forecast?latitude=' + latitude + '&longitude=' + longitude + 
+      '&current=temperature_2m,weather_code,wind_speed_10m,precipitation&daily=weather_code,temperature_2m_max,wind_speed_10m_max,precipitation_sum&timezone=auto';
+    
+    fetch(url)
+      .then(function (response) { return response.json(); })
+      .then(function (weatherData) {
+        const current = weatherData.current || {};
+        const daily = weatherData.daily || {};
+        
+        // Get today's forecast (or nearest available)
+        const todayWeatherCode = daily.weather_code ? daily.weather_code[0] : null;
+        const todayHigh = daily.temperature_2m_max ? daily.temperature_2m_max[0] : null;
+        const todayWind = daily.wind_speed_10m_max ? daily.wind_speed_10m_max[0] : null;
+        const todayPrecip = daily.precipitation_sum ? daily.precipitation_sum[0] : null;
+        
+        // Calculate days until launch
+        var daysUntilLaunch = 999;
+        if (launchDate) {
+          var launchTime = new Date(launchDate).getTime();
+          var nowTime = new Date().getTime();
+          daysUntilLaunch = Math.ceil((launchTime - nowTime) / (1000 * 60 * 60 * 24));
+        }
+        
+        // Determine if forecast is "Live" or "Predicted"
+        var forecastType = 'Live forecast';
+        if (daysUntilLaunch > 0 && daysUntilLaunch <= 14) {
+          forecastType = 'Predicted (' + daysUntilLaunch + ' days)';
+        } else if (daysUntilLaunch > 14) {
+          forecastType = 'Predicted (long-range)';
+        }
+        
+        // Convert WMO weather codes to descriptions
+        var weatherDescription = 'Forecast pending';
+        if (todayWeatherCode === 0 || todayWeatherCode === 1) weatherDescription = 'Clear sky';
+        else if (todayWeatherCode === 2) weatherDescription = 'Partly cloudy';
+        else if (todayWeatherCode === 3) weatherDescription = 'Overcast';
+        else if (todayWeatherCode === 45 || todayWeatherCode === 48) weatherDescription = 'Foggy';
+        else if (todayWeatherCode >= 51 && todayWeatherCode <= 67) weatherDescription = 'Drizzle or rain';
+        else if (todayWeatherCode >= 71 && todayWeatherCode <= 77) weatherDescription = 'Snow';
+        else if (todayWeatherCode === 80 || todayWeatherCode === 81 || todayWeatherCode === 82) weatherDescription = 'Rain showers';
+        else if (todayWeatherCode >= 85 && todayWeatherCode <= 86) weatherDescription = 'Snow showers';
+        else if (todayWeatherCode >= 80 && todayWeatherCode <= 82) weatherDescription = 'Rain showers';
+        else if (todayWeatherCode >= 85 && todayWeatherCode <= 86) weatherDescription = 'Snow showers';
+        else if (todayWeatherCode >= 90 && todayWeatherCode <= 99) weatherDescription = 'Thunderstorm';
+        
+        // Update the launch status with live weather
+        const statusCard = document.getElementById('launch-status-card');
+        if (statusCard) {
+          // Convert Celsius to Fahrenheit
+          var tempF = todayHigh !== null ? Math.round((todayHigh * 9/5) + 32) : null;
+          // Convert km/h to mph
+          var windMph = todayWind !== null ? Math.round(todayWind * 0.621371) : null;
+          
+          var launchStatusObj = {
+            weatherForecast: {
+              summary: weatherDescription,
+              high: tempF !== null ? tempF + '°F' : '--',
+              wind: windMph !== null ? windMph + ' mph' : '--',
+              precip: todayPrecip !== null ? todayPrecip.toFixed(1) + ' mm' : '--',
+              visibility: current.weather_code === 0 ? 'Good launch visibility' : 'Check conditions',
+              confidence: forecastType,
+              location: locationName || ''
+            }
+          };
+          renderLaunchWeather(launchStatusObj);
+        }
+      })
+      .catch(function (err) {
+        // Silently fail - keep static forecast
+      });
+  }
+
   function loadDataAndRender() {
     fetch('js/data/site-data.json')
       .then(function (response) { return response.json(); })
@@ -644,6 +758,9 @@
         renderLaunchStatusCard(data.launchStatus);
         renderLaunchWeather(data.launchStatus);
         renderCountdown(data.launchStatus);
+        
+        // Fetch live weather for Snow Ranch launch site (37.8°N, -120.8°W)
+        fetchLiveWeather(37.8, -120.8, data.launchStatus.nextLaunchISO, 'Snow Ranch, CA');
         renderCounters(data.counters);
         renderQuickLinks((data.homepage && data.homepage.quickLinks) || []);
         renderLaunchSites(data.launchSites);
@@ -697,6 +814,8 @@
 
   /* ---- Accordion ---- */
   wireAccordions();
+
+  setupBackToTopButton();
 
   /* ---- Membership form submission (no back-end; show thank-you) ---- */
   const joinForm = document.getElementById('join-form');
