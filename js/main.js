@@ -1,5 +1,5 @@
 ﻿/* =====================================================
-   LUNAR Rocketry Club â€“ Main JavaScript
+   LUNAR Rocketry Club – Main JavaScript
    ===================================================== */
 
 (function () {
@@ -37,8 +37,8 @@
           '<div class="event-item__body">' +
             '<div class="event-item__title">' + (launch.title || 'Launch') + '</div>' +
             '<div class="event-item__meta">' +
-              '<span>ðŸ“ ' + (launch.location || 'TBD') + '</span>' +
-              '<span>â° ' + (launch.time || 'TBD') + '</span>' +
+              '<span>' + (launch.location || 'TBD') + '</span>' +
+              '<span>' + (launch.time || 'TBD') + '</span>' +
               '<span class="badge ' + getBadgeClass(launch.badge) + '">' + (launch.status || 'Scheduled') + '</span>' +
             '</div>' +
             '<p class="event-item__text">' + (launch.description || '') + '</p>' +
@@ -298,9 +298,9 @@
             '<h3 class="record-card__title">Highest ' + (row.motorClass || '?') + ' Class Flight</h3>' +
             '<p class="record-card__altitude">' + (row.altitude || 'TBD') + '</p>' +
             '<p class="record-card__meta">' +
-              (row.member || 'Member') + ' Â· ' +
-              (row.rocket || 'Rocket') + ' Â· ' +
-              (row.site || 'Site') + ' Â· ' +
+              (row.member || 'Member') + ' · ' +
+              (row.rocket || 'Rocket') + ' · ' +
+              (row.site || 'Site') + ' · ' +
               formatHistoryDate(row.date || '') +
             '</p>' +
           '</div>' +
@@ -318,7 +318,7 @@
         '<article class="card">' +
           '<p class="card__eyebrow">' + (item.altitude || '') + '</p>' +
           '<h3 class="card__title">' + (item.member || 'Member') + '</h3>' +
-          '<p class="card__text">' + (item.rocket || '') + ' Â· ' + (item.site || '') + '</p>' +
+          '<p class="card__text">' + (item.rocket || '') + ' · ' + (item.site || '') + '</p>' +
           '<p class="card__text">' + (item.description || '') + '</p>' +
           '<p class="card__text">' + formatHistoryDate(item.date || '') + '</p>' +
         '</article>'
@@ -371,7 +371,7 @@
             '<span class="lost-item__status">' + (item.status || 'Open') + '</span>' +
           '</div>' +
           '<h3 class="lost-item__title">' + (item.item || 'Equipment') + '</h3>' +
-          '<p class="lost-item__meta">' + formatHistoryDate(item.date || '') + ' Â· ' + (item.where || 'Range') + '</p>' +
+          '<p class="lost-item__meta">' + formatHistoryDate(item.date || '') + ' · ' + (item.where || 'Range') + '</p>' +
           '<p class="lost-item__text">' + (item.notes || '') + '</p>' +
           '<a class="resource-link" href="mailto:' + (item.contact || 'info@lunarrocketry.org') + '">Contact: ' + (item.contact || 'info@lunarrocketry.org') + '</a>' +
         '</article>'
@@ -424,7 +424,7 @@
     node.innerHTML = items.map(function (officer) {
       return (
         '<article class="team-card">' +
-          '<div class="team-card__avatar">' + (officer.avatar || 'ðŸ‘¤') + '</div>' +
+          '<div class="team-card__avatar">' + (officer.avatar || '') + '</div>' +
           '<div class="team-card__name">' + (officer.name || 'Officer') + '</div>' +
           '<div class="team-card__role">' + (officer.role || '') + '</div>' +
           '<p class="team-card__text">' + (officer.focus || '') + '</p>' +
