@@ -43,7 +43,10 @@
         "Use a radio or phone app if your team coordinates multiple recovery crews.",
         "Great for large airframes, cert flights, and higher recovery footprints."
       ],
-      "mapEmbed": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12380.40513803415!2d-120.82674096682445!3d37.9423173370357!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8090f30023cb9b3d%3A0xe5ae883940c43cc7!2sSnow%20Ranch%20-%20LUNAR%20Rocket%20Launch%20Site!5e1!3m2!1sen!2sus!4v1778190052430!5m2!1sen!2sus"
+      "lat": 37.94909614427463,
+      "lon": -120.79571709959897,
+      "mapEmbed": "https://www.openstreetmap.org/search?query=Snow%20Ranch%20Farmington%20CA",
+      "address": "9601 CA-4, Farmington, CA 95230"
     },
     {
       "name": "Brigantino Park",
@@ -63,7 +66,10 @@
         "Plan for smaller recovery areas and tighter range control.",
         "Good site for quick launch sessions and demonstrations."
       ],
-      "mapEmbed": "https://www.google.com/maps?q=Brigantino+Park+Hollister+CA&output=embed"
+      "lat": 36.84782640244721,
+      "lon": -121.43125468045582,
+      "mapEmbed": "https://www.openstreetmap.org/search?query=Brigantino%20Park%20Hollister%20CA",
+      "address": "2100 San Juan Hollister Rd, Hollister, CA 95023"
     },
     {
       "name": "Ohlone Newark Campus",
@@ -83,7 +89,10 @@
         "Great for team coordination, recovery practice, and mission flights.",
         "Coordinate with ARC mentors before moving any test hardware to campus."
       ],
-      "mapEmbed": "https://www.google.com/maps?q=39399+Cherry+St+Newark+CA+94560&output=embed"
+      "lat": 37.5149405162624,
+      "lon": -122.00399567797618,
+      "mapEmbed": "https://www.openstreetmap.org/search?query=Ohlone%20Newark%20Campus%20Fremont%20CA",
+      "address": "39399 Cherry St, Newark, CA 94560"
     }
   ],
   "homepage": {

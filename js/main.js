@@ -68,6 +68,23 @@
     const node = document.getElementById('launch-sites-list');
     if (!node || !Array.isArray(items)) return;
 
+    function getMapsHref(address) {
+      const encodedAddress = encodeURIComponent(address || '');
+      const userAgent = navigator.userAgent.toLowerCase();
+      const isAndroid = userAgent.indexOf('android') !== -1;
+      const isIos = /iphone|ipad|ipod/.test(userAgent) || (userAgent.indexOf('macintosh') !== -1 && 'ontouchend' in document);
+
+      if (isIos) {
+        return 'https://maps.apple.com/?address=' + encodedAddress;
+      }
+
+      if (isAndroid) {
+        return 'https://www.google.com/maps/search/?api=1&query=' + encodedAddress;
+      }
+
+      return 'https://www.google.com/maps/search/?api=1&query=' + encodedAddress;
+    }
+
     const tabMarkup = items.map(function (site, index) {
       return (
         '<button type="button" class="launch-site-tab' + (index === 0 ? ' is-active' : '') + '" role="tab" id="launch-site-tab-' + index + '" aria-selected="' + (index === 0 ? 'true' : 'false') + '" aria-controls="launch-site-panel-' + index + '" data-site-index="' + index + '">' +
@@ -80,6 +97,57 @@
     const panelMarkup = items.map(function (site, index) {
       const rules = Array.isArray(site.rules) ? site.rules : [];
       const recommendations = Array.isArray(site.recommendations) ? site.recommendations : [];
+
+      // If latitude/longitude present, build an embeddable OpenStreetMap export URL
+      // which can be used in an iframe. Otherwise fall back to configured `mapEmbed`.
+      var mapSrc = '';
+      var fullMapLink = site.mapEmbed || '';
+      if (site.lat != null && site.lon != null) {
+        var lat = Number(site.lat);
+        var lon = Number(site.lon);
+        var delta = 0.01; // ~1km around the point
+        var minLon = lon - delta;
+        var minLat = lat - delta;
+        var maxLon = lon + delta;
+        var maxLat = lat + delta;
+        mapSrc = 'https://www.openstreetmap.org/export/embed.html?bbox=' + encodeURIComponent(minLon) + '%2C' + encodeURIComponent(minLat) + '%2C' + encodeURIComponent(maxLon) + '%2C' + encodeURIComponent(maxLat) + '&layer=mapnik&marker=' + encodeURIComponent(lat) + '%2C' + encodeURIComponent(lon);
+        fullMapLink = 'https://www.openstreetmap.org/?mlat=' + encodeURIComponent(lat) + '&mlon=' + encodeURIComponent(lon) + '#map=13/' + encodeURIComponent(lat) + '/' + encodeURIComponent(lon);
+      } else {
+        mapSrc = site.mapEmbed || '';
+      }
+
+      var mapHtml = '';
+      if (mapSrc) {
+        if (mapSrc.indexOf('openstreetmap.org/search') !== -1) {
+          // Can't embed OSM search pages — provide link + actions
+          mapHtml = '<div class="launch-site-card__map-placeholder">Map preview unavailable. <a href="' + fullMapLink + '" target="_blank" rel="noopener">Open map</a></div>';
+        } else {
+          mapHtml = '<iframe title="Map of ' + (site.name || 'site') + '" src="' + mapSrc + '" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>';
+        }
+
+        // Add action link for directions and make the address itself clickable.
+        var actions = [];
+        if (site.lat != null && site.lon != null) {
+          var latStr = encodeURIComponent(site.lat);
+          var lonStr = encodeURIComponent(site.lon);
+          var directionsHref = 'https://www.openstreetmap.org/directions?to=' + latStr + '%2C' + lonStr;
+          actions.push('<a class="map-action map-action--directions" href="' + directionsHref + '" target="_blank" rel="noopener">Get directions</a>');
+        } else if (fullMapLink) {
+          actions.push('<a class="map-action map-action--open" href="' + fullMapLink + '" target="_blank" rel="noopener">Open map</a>');
+        }
+
+        if (actions.length) {
+          mapHtml += '<div class="launch-site-map-actions">' + actions.join(' ') + '</div>';
+        }
+
+        // Show provided address under the map when available
+        if (site.address) {
+          mapHtml += '<a class="card__text launch-site-address" href="' + getMapsHref(site.address) + '" target="_blank" rel="noopener">' + site.address + '</a>';
+        }
+      } else {
+        mapHtml = '<div class="launch-site-card__map-placeholder">Map unavailable</div>';
+      }
+
       return (
         '<section class="launch-site-panel' + (index === 0 ? ' is-active' : '') + '" role="tabpanel" id="launch-site-panel-' + index + '" aria-labelledby="launch-site-tab-' + index + '"' + (index === 0 ? '' : ' hidden') + '>' +
           '<div class="launch-site-panel__layout">' +
@@ -94,9 +162,7 @@
               '<p class="launch-site-card__heading">Recommendations</p>' +
               '<ul class="program-points">' + recommendations.map(function (item) { return '<li>' + item + '</li>'; }).join('') + '</ul>' +
             '</div>' +
-            '<div class="launch-site-panel__map">' +
-              (site.mapEmbed ? '<iframe title="Map of ' + (site.name || 'site') + '" src="' + site.mapEmbed + '" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>' : '<div class="launch-site-card__map-placeholder">Map unavailable</div>') +
-            '</div>' +
+            '<div class="launch-site-panel__map">' + mapHtml + '</div>' +
           '</div>' +
         '</section>'
       );
